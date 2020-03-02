@@ -14052,6 +14052,8 @@ $ conda install -c r r-essentials</code></pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Install-packages"><strong>Install packages</strong><a class="anchor-link" href="#Install-packages">&#182;</a></h3><p>The packages you'll be needing for this course are dplyr, SingleR, Seurat and enrichR.</p>
+<p>Run these commands one by one because there can be some difficulties.</p>
+<p>If R asks you if you want to update packages, or install from source, say no.</p>
 <p>This can take some time; we'll go through some background material while it installs</p>
 
 </div>
@@ -14059,21 +14061,21 @@ $ conda install -c r r-essentials</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-r"><pre><span></span><span class="n">start.time</span> <span class="o">&lt;-</span> <span class="nf">Sys.time</span><span class="p">()</span>
 
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;BiocManager&quot;</span><span class="p">)</span> <span class="c1"># package manager</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;dplyr&#39;</span><span class="p">)</span> <span class="c1"># install dplyr - for easy table manipulation</span>
-<span class="n">devtools</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#39;dviraran/SingleR&#39;</span><span class="p">)</span>
-
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;devtools&#39;</span><span class="p">)</span>
 <span class="c1"># Seurat dependencies</span>
 <span class="n">BiocManager</span><span class="o">::</span><span class="nf">install</span><span class="p">(</span><span class="s">&quot;multtest&quot;</span><span class="p">)</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;mutoss&quot;</span><span class="p">)</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;metap&quot;</span><span class="p">)</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;Seurat&#39;</span><span class="p">)</span> <span class="c1"># install Seurat - for bulk of the analysis</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;enrichR&#39;</span><span class="p">)</span> <span class="c1"># install enrichR - for pathway and process enrichment</span>
+<span class="n">devtools</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#39;dviraran/SingleR&#39;</span><span class="p">)</span> <span class="c1"># For cell type assignment</span>
 
 <span class="c1"># check this worked by loading packages</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">SingleR</span><span class="p">)</span>
